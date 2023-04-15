@@ -1,17 +1,26 @@
 /* nejsme vcerejsi, pouzivame moderni box model */
-html { box-sizing: border-box; }
-*, :after, :before { box-sizing: inherit; }
+html {
+	box-sizing: border-box;
+}
+
+*,
+:after,
+:before {
+	box-sizing: inherit;
+}
 
 
 body {
 	margin: 0;
 	padding: 30px;
-	font-family:  'Alice', serif;
+	font-family: 'Alice', serif;
 	font-size: 18px;
 	line-height: 1.5;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
 	font-family: 'Kaushan Script', cursive;
 	font-weight: normal;
 	margin: 0;
@@ -66,3 +75,113 @@ blockquote {
 	- https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/
 */
 
+.blog {
+	display: grid;
+	grid-template-columns: 1fr 4fr 2fr;
+	gap: 40px;
+}
+
+header,
+p,
+h2,
+footer {
+	grid-column: 2;
+}
+
+figure,
+blockquote {
+	grid-column: 1/-1;
+}
+
+.tip-vlevo {
+	grid-column: 1;
+	border-right: 3px solid var(--zluta);
+	text-align: right;
+
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+.meta {
+	color: var(--seda);
+	padding-top: 40px;
+}
+
+figure img {
+	width: 100%;
+	object-fit: contain;
+}
+
+figcaption {
+	color: var(--seda);
+}
+
+.tip-vpravo {
+	grid-column: 3;
+	border-left: 3px solid var(--zluta);
+}
+
+.tip {
+	background-color: var(--svetla);
+	color: var(--tmava);
+	padding: 20px;
+	font-size: 16px;
+	align-self: center;
+
+}
+
+.tip a {
+	color: var(--oranzova);
+}
+
+.tip img {
+	width: 100%;
+	object-fit: cover;
+}
+
+h1 {
+	font-size: 92px;
+	color: var(--zelena);
+}
+
+h2 {
+	font-size: 62px;
+	text-align: left;
+	color: var(--zelena);
+}
+
+blockquote {
+	font-size: 38px;
+	text-align: center;
+	color: var(--seda);
+	position: relative;
+
+}
+
+footer,
+footer a {
+	font-size: 14px;
+	color: var(--seda);
+}
+
+blockquote::before,
+blockquote::after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 120px;
+	height: 3px;
+	border-top: 2px solid var(--limetka);
+	left: 45%;
+}
+
+blockquote::before {
+	margin-top: -30px;
+}
+
+blockquote::after {
+	margin-top: 30px;
+}
